@@ -4,20 +4,20 @@ import Features from "./Features";
 import ParaAndCorrection from "./ParaAndCorrection";
 
 function Mid() {
-	const [cardIdx, setCardIdx] = useState(1);
+	const [idx, setIdx] = useState(1);
 	const [counter, setCounter] = useState<NodeJS.Timer>();
 
 	useEffect(() => {
 		if (counter) return;
 		const interval = setInterval(() => {
-			setCardIdx((prev) => {
+			setIdx((prev) => {
 				if (prev === 4) return 1;
 				return prev + 1;
 			});
-		}, 5200);
+		}, 5500);
 
 		setCounter(interval);
-	}, []);
+	}, [idx]);
 
 	return (
 		<div
@@ -37,10 +37,17 @@ function Mid() {
              relative w-full"
 			>
 				<div className="relative left-80">
-					<ParaAndCorrection idx={cardIdx} />
+					<ParaAndCorrection idx={idx} />
 				</div>
-				<div className="right-72 top-20 absolute">
-					<Features idx={cardIdx} />
+				<div className="right-60 top-20 absolute">
+					<Features
+						{...{
+							idx,
+							setIdx,
+							mainCounter: counter,
+							setMainCounter: setCounter,
+						}}
+					/>
 				</div>
 			</div>
 		</div>

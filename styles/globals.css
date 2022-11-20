@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Inter");
 
 .login {
 	font-size: 14px;
@@ -27,4 +27,14 @@
 
 .font {
 	font-family: "Inter", sans-serif;
+}
+.preface {
+	font-size: 11px;
+	letter-spacing: 0.04em;
+	line-height: 16px;
+}
+
+.lower-title {
+	font-size: 29px;
+	line-height: 38px;
 }
