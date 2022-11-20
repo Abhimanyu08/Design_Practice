@@ -1,5 +1,5 @@
 import React from "react";
-import { FiCheck } from "react-icons/fi";
+import { GoCheck } from "react-icons/go";
 import { freePoints, premiumPoints } from "../utils/constants";
 
 const freeStats = {
@@ -71,8 +71,11 @@ const BulletPoints = ({
 			<div className="mt-5 flex flex-col gap-3">
 				{points.map((point, idx) => {
 					return (
-						<div className="flex items-center gap-1 text-button">
-							<FiCheck />
+						<div
+							className="flex items-center gap-1 text-button"
+							key={idx}
+						>
+							<GoCheck />
 							<span
 								className={` text-black font underline underline-offset-4 text-sm 
                                 ${
